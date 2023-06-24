@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <script src="https://kit.fontawesome.com/aba7e623fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
+    <title>Document</title>  
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="traffic-dot bg-danger"></span><span class="traffic-dot bg-warning"></span><span class="traffic-dot bg-success"></span></a>
+            </li>
+            <div class="nav-first-mid">
+              <div class="nav-first-mid-top">
+                <i class="fa-solid fa-xmark"></i>
+                <li>moxey.ai</li>
+                <i class="fas fa-lock"></i> 
+
+              </div>
+              
+             <i class="fas fa-ellipsis-h"></i>
+           
+
+            </div>
+            
+            <div class="first-nav-last">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-download"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-save"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-plus"></i></a>
+              </li>
+            </div>
+          </ul>
+          
+          
+        </div>
+      </nav>
+      
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-brand" href="#">
+            <div class="   d-inline"> <i class="fa-regular fa-bell"></i></div>
+           
+             | MO<span class="text-success">X</span>EY
+            
+        </div>
+        </div>
+      </nav>
+      <div class="drivers">
+        <h3>Drivers</h3>
+        <div class="drivers_part2">
+          <div class="drivers_part2_country">
+            <i class="fa-solid fa-globe"></i>
+            <select class="form-select" >
+              
+              <option value="">Country</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Egypt">Egypt</option>
+            </select>
+          </div>
+          
+            <div class="container-date-first">
+              
+              <div class="form-group">
+                <input type="date" class="datepicker" class="form-control" >
+              </div>
+            </div>
+          <div class="file-select">
+            <i class="fa-solid fa-file"></i>
+          </div>
+        </div>
+      </div>
+      <hr>
+    
+    <div class="graph-detail">
+      <div class="canvas-details"><canvas id="myChart" class="d-inline" style="width:100%;max-width:600px"></canvas></div>
+      <div class="graph-detail-main">
+        <div class="graph-detail-mid">
+            <div class="graph-detail-mid-container">
+                <h4>Active drivers</h4>
+                <div class="graph-detail-mid-foot">
+                  <i class="fa-regular fa-user"></i>
+                  <h4>120</h4>
+                </div>
+
+            </div>
+            <div class="graph-detail-mid-container">
+              <h4>INActive drivers</h4>
+              <div class="graph-detail-mid-foot">
+                <i class="fa-regular fa-user"></i>
+                <h4>120</h4>
+              </div>
+
+          </div>
+
+        </div>
+        <div class="graph-detail-mid">
+          <div class="graph-detail-mid-container">
+            <h4>InProcess drivers</h4>
+            <div class="graph-detail-mid-foot">
+              <i class="fa-regular fa-user"></i>
+              <h4 id="inProcessCount">120</h4>
+            </div>
+
+        </div>
+        <div class="graph-detail-mid-container">
+          <h4>Rejected  drivers</h4>
+          <div class="graph-detail-mid-foot">
+            <i class="fa-regular fa-user"></i>
+            <h4>120</h4>
+          </div>
+
+      </div>
+
+        </div>
+
+      </div>
+      <div class="graph-detail-foot">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addDriverModal">ADD NEW DRIVER</button>
+        <div class="total-drivers">
+           <div class="total-drivers-head">
+              <h4>Total Drivers</h4>
+              <i class="fa-regular fa-user"></i>
+
+           </div>
+           <div class="total-drivers-foot">
+             <h6>Percentage Increase</h6>
+             <div class="total-drivers-foot-foot">
+                <h4>30%</h4>
+                <h4><i class="fa-solid fa-arrow-up"></i></h4>
+                <h4>340</h4>
+             </div>
+
+           </div>
+
+        </div>
+      </div>
+      
+    </div>
+
+    
+
+    <table class="table " style="width:100%">
+        <thead class="table-success">
+            <tr>
+                <th>STATUS</th>
+                <th>MOXEY ID</th>
+                <th>TRANSPOTER</th>
+                <th>DRIVER NAME(EN)</th>
+                <th>DRIVER NAME(AR)</th>
+                <th>EXTERNAL CUSTOMER ID</th>
+                <th>MOBILE NUMBER</th>
+                <th>CARD NUMBER</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="driverTableBody">
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+    </table>
+    <div id="pagination" class="text-center">
+      <button id="prevButton" class="btn btn-primary">Prev</button>
+      <button id="nextButton" class="btn btn-primary">Next</button>
+    </div>
+    <div id="recordCounts" class="text-center mt-3">
+      <p>Total Records: <span id="totalCount"></span></p>
+      <p>Records in Current Page: <span id="currentPageCount"></span></p>
+    </div>
+
+    <div class="modal fade" id="addDriverModal" tabindex="-1" aria-labelledby="addDriverModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addDriverModalLabel">Add New Driver</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form  class="row g-3" id="driverForm">
+              <div class="form-first">
+                <div class="dropdown">
+                  <h5>Country <span class="text-danger">*</span></h5>
+                  
+                  
+                  <select class="form-select" id="country" >
+              
+                    <option value="">SELECT Country</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Egypt">Egypt</option>
+                  </select>
+                  <div class="country-error error"></div>
+                </div>
+                <div class="mb-3">
+                  <h5><label for="userType">User Type</label></h5>
+                  <select class="form-select" id="userType">
+                    <option value="">Select User Type</option>
+                    <option value="driver">Driver</option>
+                    <option value="broker">Broker</option>
+                    <option value="both">Both</option>
+                  </select>
+                </div>
+              </div>
+    
+              <div class="container">
+                <div class="part part1">
+                  <div class="mb-3">
+                    <label for="firstName">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" >
+                  </div>
+                  <div class="firstName-error error"></div>
+                  <div class="mb-3">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" placeholder="Enter Middle Name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="lastName">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                  </div>
+                  <div class="lastName-error error"></div>
+                  <div class="mb-3">
+                    <label for="gender">Gender <span class="text-danger">*</span></label>
+                    <select class="form-select" id="gender" >
+                      <option value="">Select Gender</option>
+                      <option value="driver">Male</option>
+                      <option value="broker">Female</option>
+                      <option value="both">Other</option>
+                    </select>
+                    <div class="firstName-error error"></div>
+                  </div>
+                </div>
+    
+                <div class="part part2">
+                  <div class="mb-3">
+                    <label for="firstNameArabic">First Name(AR)</label>
+                    <input type="text" class="form-control" id="firstNameArabic" placeholder="Enter First Name in Arabic">
+                  </div>
+                  <div class="mb-3">
+                    <label for="middleNameArabic">Middle Name(AR)</label>
+                    <input type="text" class="form-control" id="middleNameArabic" placeholder="Enter Middle Name in Arabic">
+                  </div>
+                  <div class="mb-3">
+                    <label for="lastNameArabic">Last Name in(AR)</label>
+                    <input type="text" class="form-control" id="lastNameArabic" placeholder="Enter Last Name in Arabic">
+                  </div>
+                  <div class="container">
+                    <label>Date of Birth <span class="text-danger">*</span></label>
+                    <div class="form-group">
+                      <input type="date" class="datepicker form-datepicker" class="form-control" >
+                    </div>
+                  </div>
+                  <div class="datepicker-error error"></div>
+                </div>
+
+                <div class="part part3">
+                  <div class="mb-3">
+                    <label for="mobileNumber"> Type Mobile Number <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="mobileNumber" placeholder="Enter Mobile Number" >
+                  </div>
+                  <div class="mobileNumber-error error"></div>
+                  <div class="mb-3">
+                    <label for="nationality">Select Nationality </label>
+                    <select class="form-select" id="nationality" >
+                      <option value="">Select Nationality</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Egypt">Egypt</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="countryOfBirth">Select Country of Birth </label>
+                    <select class="form-select" id="country">
+              
+                      <option value="">Country</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Egypt">Egypt</option>
+                    </select>
+                  </div>
+
+    
+                  <div class="mb-3">
+                    <label for="cityOfBirth">Select City of Birth <span class="text-danger">*</span></label>
+                    <select class="form-select" id="cityOfBirth">
+                      <option value="">Select City of Birth</option>
+                      <!-- Add country of birth options here -->
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Egypt">Egypt</option>
+                    </select>
+                    <div class="cityOfBirth-error error"></div>
+                  </div>
+                </div>
+    
+                <div class="part part4">
+                  <div class="mb-3 part4">
+                    <label for="cardName">Name of the Card</label>
+                    <input type="text" class="form-control" id="cardName" placeholder="Enter Name of the Card" >
+                  </div>
+                  <div class="cardName-error error"></div>
+                </div>
+    
+                <div class="part part5">
+                  <div class="mb-3">
+                    <label for="streetName">Street Name </label>
+                    <input type="text" class="form-control" id="streetName" placeholder="Enter Street Name" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="country">Select Country </label>
+                    <select class="form-select" id="country">
+              
+                      <option value="">Country</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Egypt">Egypt</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="town">Select Town <span class="text-danger">*</span></label>
+                    <select class="form-select" id="town" >
+                      <option value="">Select Town</option>
+                    </select>
+                    <div class="town-error error"></div>
+                  </div>
+                  <div class="part">
+                    <div class="mb-3">
+                      <label for="zipCode"> Zip code </label>
+                      <input type="number" class="form-control" id="zipcode" placeholder="Enter Zip code" >
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="text-center">
+                  <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+      
+</body>
+</html>
